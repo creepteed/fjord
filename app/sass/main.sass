@@ -1,0 +1,366 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+@import "cart"
+
+@keyframes side-move
+    0%
+       left: -20%
+    100%
+        left: 0%
+@keyframes side-move-back
+    0%
+        left: 0%
+    100%
+        left: -20%
+body
+    background-color: $white
+    overflow-x: hidden
+    overflow-y: scroll
+    font-size: 20px
+    font-family: $roboto-slab-light
+    h1
+        font-size: 2em
+    h2
+        font-size: 1.5em
+    h3
+        font-size: 1.25em
+    a
+        text-decoration: none
+
+//navbar
+.navbar-menu
+    max-height: 5em
+
+    .navbar-side
+        a
+            font-family: RobotoCondensed
+            color: #eceff1
+            font-size: 13px
+            font-weight: 400
+            line-height: 50px
+            text-align: left
+            text-transform: uppercase
+            cursor: pointer
+        position: fixed
+        display: block
+        width: 20%
+        top: 0
+        left: -20%
+        z-index: 998
+        height: 100vh
+        background-color: $dark-grey
+        animation: side-move-back 0.25s ease-in-out
+        li
+            list-style: none
+        ul
+            padding: 20px 20px
+            margin-top: 50%
+    .navbar-side.active
+        animation: side-move 0.25s ease-in-out
+        left: 0
+    .navbar-middle
+        display: inline-block
+        width: 33%
+        position: relative
+        margin-left: 33%
+        .phone-left
+            display: inline-block
+            span
+                color: black
+                font-family: $roboto-slab-bold
+                font-size: 1em
+                span
+                    color: $light-grey
+                    font-family: $roboto-slab-light
+        .phone-right
+            display: inline-block
+            span
+                color: black
+                font-family: $roboto-slab-bold
+                font-size: 1em
+                span
+                    color: $light-grey
+                    font-family: $roboto-slab-light
+        .navbar-logo
+            width: 160px
+            margin: 0 auto
+            display: inline-block
+            img
+                width: 100%
+                height: auto
+
+    .navbar-cart
+        position: relative
+        top: -2em
+        display: inline-block
+        width: 25%
+        text-align: right
+        .navbar_cart-bag
+            cursor: pointer
+        .navbar_cart-text
+            display: inline-block
+            text-align: center
+            border-radius: 50%
+            background-color: #eeeeee
+            width: 1em
+            height: 1em
+            line-height: 0.7em
+            span
+                font-family: OpenSans
+                color: #757575
+                font-size: 14px
+                font-weight: 300
+                text-align: center
+
+.sandwich
+    width: 70px
+    height: 50px
+    z-index: 999
+    margin-left: 10px
+    margin-top: 10px
+    position: relative
+    display: inline-block
+    .sw-top,
+    .sw-mid,
+    .sw-bot
+        position: relative
+        width: 30px
+        height: 3px
+        background-color: rgb(51, 51, 51)
+        border: none
+        border-radius: 4px
+        transition: transform 0.5s , top 0.2s
+    .sw-top
+        top: 0
+    .sw-mid
+        top: 6px
+    .sw-bot
+        top: 12px
+
+.sandwich.active
+    .sw-top
+        top: 5px
+        transform: rotate(140deg)
+    .sw-mid
+        top: 1.7px
+        transform: rotate(-140deg)
+    .sw-bot
+        opacity: 0
+        top: 0
+        transform: rotate(180deg)
+
+.doc-swipe-3
+    position: fixed
+    display: none
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    padding: 4em
+    background-color: rgba(255,255,2555,.9)
+    .close-but
+        position: absolute
+        right: 3em
+        top: 2em
+        color: #000
+        cursor: pointer
+        transition: all .25s ease-in
+        &:hover
+            color: $green
+    .swiper-container
+        height: 100%
+        .swiper-wrapper
+            .swiper-slide
+                display: -webkit-box
+                display: -ms-flexbox
+                display: -webkit-flex
+                display: flex
+                -webkit-box-pack: center
+                -ms-flex-pack: center
+                -webkit-justify-content: center
+                justify-content: center
+                -webkit-box-align: center
+                -ms-flex-align: center
+                -webkit-align-items: center
+                align-items: center
+                background-size: contain
+                background-repeat: no-repeat
+
+//navbar
+//section1
+
+.header-title
+    height: auto
+    margin-top: 8em
+    h1
+        font-family: $roboto-slab-light
+        font-size: 2.5em
+        line-height: 1em
+        text-align: center
+        color: $grey-text
+        span
+            font-family: $merri-font
+            color: $dark-text
+    h2
+        font-family: $cormorant-garamond
+        font-size: 2em
+        font-style: italic
+        text-align: center
+        line-height: 0
+        color: $grey-text
+
+.head-picture
+    width: 100%
+    background-position: 50% 50%
+    background-repeat: no-repeat
+    background-size: contain
+    height: 17em
+.head-description
+    position: absolute
+    bottom: -5em
+    .left-grow
+        position: absolute
+        left: -2.5em
+        bottom: -2em
+    .right-grow
+        position: absolute
+        right: -2.5em
+        bottom: -2em
+    p
+        font-family: $roboto-condensed
+        font-size: 1.375em
+        line-height: 1.375em
+        text-align: center
+        position: relative
+        margin: 0 auto
+        span
+            padding: 0
+            &:nth-of-type(1)
+                background-color: rgb(255, 249, 196)
+                span
+                    font-family: $roboto-slab-bold
+                    &:before
+                        content:  "\00ab"
+                    &:after
+                        content:  "\00bb"
+            &:nth-of-type(2)
+                font-family: $roboto-slab-bold
+//section1
+
+//section2
+
+.icons-block
+    margin-top: 12em
+    h2
+        font-family: $merri-font
+        text-align: center
+        font-size: 1.875em
+        color: $dark-grey
+    .icons-main
+        margin-top: 2em
+        cursor: pointer
+        transition: all .25s ease-in
+        &:hover p
+            color: $green
+            text-decoration: dotted underline
+        p
+            font-family: $roboto-condensed
+            font-size:  1em
+            text-align: center
+            line-height: 1.2em
+            transition: all .25s ease-in
+
+
+//section2
+
+//section3
+
+.certificates
+    position: relative
+    margin-top: 6em
+    h2
+        font-family: $merri-font
+        font-size: 1.875em
+        color: $dark-grey
+        text-align: center
+    .round
+        background-color: $light-green
+        border-radius: 50%
+        height: 30em
+        width: 30em
+        top: 0
+        z-index: -99
+        position: absolute
+        left: 25%
+    .cert-button
+        width: 8em
+        position: absolute
+        top: 25%
+        left: 3.5em
+.doc-swipe-1
+    position: fixed
+    display: none
+    width: 100vw
+    height: 100vh
+    top: 0
+    left: 0
+    padding: 4em
+    background-color: rgba(0,0,0,.7)
+    .close-but
+        position: absolute
+        right: 3em
+        top: 2em
+        color: #fff
+        cursor: pointer
+        transition: all .25s ease-in
+        &:hover
+            color: $green
+    .swiper-container
+        height: 100%
+        .swiper-wrapper
+            .swiper-slide
+                display: -webkit-box
+                display: -ms-flexbox
+                display: -webkit-flex
+                display: flex
+                -webkit-box-pack: center
+                -ms-flex-pack: center
+                -webkit-justify-content: center
+                justify-content: center
+                -webkit-box-align: center
+                -ms-flex-align: center
+                -webkit-align-items: center
+                align-items: center
+                background-size: contain
+                background-repeat: no-repeat
+//section3
+
+//section4
+
+.wonder
+    margin-top: 8em
+    margin-bottom: 4em
+    h1
+        font-family: $merri-font
+        color: $dark-grey
+        text-align: center
+        span
+            color: $green
+    .left-wonder
+        border: 1px dashed $light-grey
+        p
+            padding-left: 2.5em
+            padding-right: 2.5em
+            span
+                color: $green
+                font-family: $roboto-slab-bold
+
+    .right-wonder
+        p
+            margin-top: -.3em
+//section4
+
+
+@import "media"
+// Всегда в конце
