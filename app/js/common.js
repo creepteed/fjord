@@ -24,6 +24,7 @@ $(document).ready(function () {
         $('.doc-swipe-3').fadeIn(200);
     });
 
+
     var swiper = new Swiper('.swiper-container', {
         pagination: '.swiper-pagination',
         slidesPerView: 3,
@@ -31,4 +32,22 @@ $(document).ready(function () {
         spaceBetween: 30,
         freeMode: true
     });
+
+    $(document).on('scroll', function(){
+        console.log(999);
+        var a = $(document).scrollTop();
+        if(a > 100){
+            $('.navbar-menu').addClass('active');
+            $('.navbar-logo img').attr('src', 'img/proj_img/logo-fixed.png');
+            $('.navbar-cart img').attr('src', 'img/proj_img/bagWhite.png');
+            $('.sw-top, .sw-mid, .sw-bot').css('background-color','rgb(255, 255, 255)');
+        } else {
+            $('.navbar-menu').removeClass('active');
+            $('.navbar-logo img').attr('src', 'img/proj_img/logo.jpg');
+            $('.navbar-cart img').attr('src', 'img/proj_img/bag.png');
+            $('.sw-top').css('background-color','rgb(51, 51, 51)');
+        }
+    });
+
+
 });
