@@ -32,10 +32,11 @@ $(document).ready(function () {
         spaceBetween: 30,
         freeMode: true
     });
-
+    var b = $(".benefits").scrollTop() + $(".benefits").innerHeight();
+    var a = $(document).scrollTop();
+    var docHeight = $(document).scrollHeight;
     $(document).on('scroll', function(){
-        console.log(999);
-        var a = $(document).scrollTop();
+
         if(a > 100){
             $('.navbar-menu').addClass('active');
             $('.navbar-logo img').attr('src', 'img/proj_img/logo-fixed.png');
@@ -47,6 +48,11 @@ $(document).ready(function () {
             $('.navbar-cart img').attr('src', 'img/proj_img/bag.png');
             $('.sw-top').css('background-color','rgb(51, 51, 51)');
         }
+        // console.log(b);
+        // console.log(docHeight);
+        // if(b >= docHeight) {
+        //     $(".benefits").animate({opacity: 1}, 200);
+        // }
     });
 
 
@@ -71,4 +77,6 @@ $(document).ready(function () {
         });
     }
     reorder()
+
+
 });
