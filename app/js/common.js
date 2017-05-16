@@ -71,4 +71,24 @@ $(document).ready(function () {
         });
     }
     reorder()
+    $(".buy_color-item").hover( function() {
+
+        $(this).find(".buy_hover").css("transition","1s");
+        $(this).find(".buy_hover").css("opacity","1");
+    }, function () {
+        $(this).find(".buy_hover").css("transition","1s");
+        $(this).find(".buy_hover").css("opacity","0");
+    });
+
+    $(".buy_hover-buy").hover( function() {
+
+        $(this).css("transition","0.5s");
+        $(this).css("background-color","#fff");
+        $(this).css("color","#7cb342");
+    }, function () {
+        $(this).css("transition","0.5s");
+        $(this).css("color","#fff");
+        $(this).css("background-color","#7cb342");
+
+    });
 });
